@@ -4,7 +4,7 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Water4Simple
   m_Shader: {fileID: 4800000, guid: 8aaff0751054e4a9cb4642d01eaf5be9, type: 3}
