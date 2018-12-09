@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBase : MonoBehaviour {
+public class EnemyBase : MonoBehaviour 
+{
 
     GameObject player;
 
     public float speed;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
 		player = GameObject.Find("VR Rig");
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
         float step = speed * Time.deltaTime;
 
 		transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);

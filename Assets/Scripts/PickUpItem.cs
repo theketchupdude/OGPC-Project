@@ -59,7 +59,7 @@ public class PickUpItem : MonoBehaviour
                     collectedItems[i][amount] = collision.gameObject;
                 } catch (Exception e)
                 {
-                    Debug.LogError("To many items in the stack");
+                    Debug.LogError("Too many items in the stack:" + e.ToString());
                     return;
                 }
                 amount = 0;
@@ -71,7 +71,10 @@ public class PickUpItem : MonoBehaviour
         // This just moves the object up so it disapears, since you can't delete it.
         collision.gameObject.transform.position = new Vector3(0, 100, 0);
     }
+    
 
+    //Was for testing
+    /*
     void Update()
     {
         // This is all really for testing purposes i'm not sure if any of this will be helpful later.
@@ -83,5 +86,5 @@ public class PickUpItem : MonoBehaviour
             // Placeholder so I can put the debugger somewhere.
             int i = 0;
         }
-    }
+    }*/
 }

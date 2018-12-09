@@ -2,19 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Deletion : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+public class Deletion : MonoBehaviour 
+{
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	
-	void OnCollisionEnter(Collision collision) {
+	void OnCollisionEnter(Collision collision) 
+    {
 		Destroy(collision.gameObject);
 	}
 }
