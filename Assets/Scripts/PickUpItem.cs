@@ -19,7 +19,7 @@ public class PickUpItem : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Check to see if we can pick up the item based on whether it has the "Collectable" tag
-        if (collision.gameObject.tag != "Collectable")
+        if (collision.gameObject.tag != "Collectable" || collision.gameObject.tag != "Food")
         {
             return;
         }
