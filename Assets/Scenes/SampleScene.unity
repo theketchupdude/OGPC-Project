@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43667555, g: 0.48427176, b: 0.56452405, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667555, g: 0.48427182, b: 0.5645241, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2034,6 +2034,7 @@ GameObject:
   - component: {fileID: 1264177676}
   - component: {fileID: 1264177678}
   - component: {fileID: 1264177679}
+  - component: {fileID: 1264177680}
   m_Layer: 0
   m_Name: VR Rig
   m_TagString: Untagged
@@ -2110,6 +2111,17 @@ MonoBehaviour:
   m_TrackingType: 2
   m_UpdateType: 0
   m_UseRelativeTransform: 1
+--- !u!114 &1264177680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1264177674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd8e5ee0fcdd1c446be80a5080a340e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1333758825
 GameObject:
   m_ObjectHideFlags: 0
@@ -2883,8 +2895,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1765451106}
-  m_LocalRotation: {x: 0.06835464, y: 0.25740504, z: 0.018257296, w: -0.96371}
-  m_LocalPosition: {x: 636.765, y: -331.12814, z: -938.8461}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -9.059999, z: 2.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
