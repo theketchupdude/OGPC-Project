@@ -7,7 +7,10 @@ using UnityEngine.UI;
 public class sf : MonoBehaviour {
 	
 	int health = 100;
-	int hunger = 100;
+	int hunger = 0;
+
+    [SerializeField]
+    float HungerRate = 1;
 	
 	private Image screentint;
 	
@@ -16,7 +19,7 @@ public class sf : MonoBehaviour {
     {
 		screentint = GameObject.Find("Tint").GetComponent<Image>();
 		
-		InvokeRepeating("DecrementHunger", 1, 30);
+		InvokeRepeating("DecrementHunger", HungerRate, HungerRate);
 	}
 	
 	// Update is called once per frame
@@ -27,9 +30,8 @@ public class sf : MonoBehaviour {
 
         transform.Rotate(0, x, 0);
         transform.Translate(0, 0, z);
-		
-		Color tint = new Color(1, 0, 0, -health + 100);
-		screentint.color = tint;
+
+        screentint.color = new Color(1, 0, 0, -(health/100.0f) + 1.0f);
 	}
 	
 	void DecrementHunger()
