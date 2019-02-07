@@ -11,13 +11,25 @@ public class GrabItem : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
+        if (OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.Touch) > 0 || OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.Touch) > 0)
+        {
+            print("Grab Button Pressed");
+        }
+
+        if (OVRInput.Get(OVRInput.Button.Two))
+        {
+            print("Pleaseeee");
+        }
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if (OVRInput.Axis1D.PrimaryHandTrigger > 0 || OVRInput.Axis1D.SecondaryHandTrigger > 0)
+        print("Hand Collided");
+
+        if (OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) > 0 || OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) > 0)
         {
+            print("Grabbed Object");
+
             other.gameObject.transform.SetParent(this.gameObject.transform);
             other.gameObject.transform.position = Vector3.zero;
         }
