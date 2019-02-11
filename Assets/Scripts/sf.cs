@@ -11,6 +11,9 @@ public class sf : MonoBehaviour {
 
     [SerializeField]
     float HungerRate = 1;
+
+    [SerializeField]
+    bool UseHunger = true;
 	
 	private Image screentint;
 	
@@ -18,8 +21,10 @@ public class sf : MonoBehaviour {
 	void Start () 
     {
 		screentint = GameObject.Find("Tint").GetComponent<Image>();
-		
-		InvokeRepeating("DecrementHunger", HungerRate, HungerRate);
+        if (UseHunger)
+        {
+            InvokeRepeating("DecrementHunger", HungerRate, HungerRate);
+        }
 	}
 	
 	// Update is called once per frame
