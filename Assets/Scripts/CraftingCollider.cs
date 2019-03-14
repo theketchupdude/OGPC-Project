@@ -10,9 +10,10 @@ public class CraftingCollider : MonoBehaviour
 	void OnCollisionEnter(Collision collision)
 	{
 		craftingMaterial = collision.gameObject.name;
+        gameObject.transform.parent.gameObject.GetComponent<Crafting>().UpdateRecipe();
 	}
 	
-	void OnCollisionExit()
+	void OnCollisionExit(Collision collision)
 	{
 		craftingMaterial = "none";
 	}

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class sf : MonoBehaviour {
+public class Player : MonoBehaviour {
 	
 	int health = 100;
 	int hunger = 0;
