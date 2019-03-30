@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour {
     public Vector2 timerRange;
     public float timerCounter;
 
-    public bool isColiding;
+    bool isColiding;
 
 	// Use this for initialization
 	void Start () {
