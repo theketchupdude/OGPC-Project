@@ -1,27 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyBase : MonoBehaviour 
 {
 
     GameObject player;
 
+    NavMeshAgent agent;
+
     public float speed;
 
 	// Use this for initialization
 	void Start () 
     {
-		player = GameObject.Find("VR Rig");
+        agent = GetComponent<NavMeshAgent>();
+
+        player = GameObject.Find("VR Rig");
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        float step = speed * Time.deltaTime;
-
-		transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
-
-        transform.rotation = new Quaternion(0, transform.rotation.y, 0, transform.rotation.w);
+        agent.SetDestination(player.transform.position);
 	}
 }
