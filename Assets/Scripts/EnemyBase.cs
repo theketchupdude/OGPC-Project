@@ -5,9 +5,9 @@ using UnityEngine.AI;
 
 public class EnemyBase : MonoBehaviour 
 {
+    public float lookRadius = 10f;
 
-    GameObject player;
-
+    Transform target;
     NavMeshAgent agent;
 
     public float speed;
@@ -17,12 +17,17 @@ public class EnemyBase : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
 
-        player = GameObject.Find("VR Rig");
+        target = GameObject.Find("VR Rig").transform;
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        agent.SetDestination(player.transform.position);
+        float distance = Vector3.Distance(target.position, transform.position);
+
+        //if (distance <= lookRadius)
+        {
+            agent.SetDestination(target.position);
+        }
 	}
 }
