@@ -28,11 +28,11 @@ public class TreeSpawner : MonoBehaviour {
             int index = Random.Range(0, trees.Length);
             if (index == 0) {
                 // Added offset for different kinds of trees
-                Instantiate(trees[index], location + new Vector3(0, 13, 0), Quaternion.Euler(-90, 0, 0));
+                Instantiate(trees[index], location + new Vector3(0, 4, 0), Quaternion.Euler(-90, 0, 0));
             } else
             {
                 // Added offset for different kinds of trees
-                Instantiate(trees[index], location + new Vector3(0, 2, 0), Quaternion.Euler(-90, 0, 0));
+                Instantiate(trees[index], location + new Vector3(0, 3, 0), Quaternion.Euler(-90, 0, 0));
             }
         }
     }
