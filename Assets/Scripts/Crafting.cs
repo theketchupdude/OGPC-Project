@@ -7,30 +7,32 @@ public class Crafting : MonoBehaviour
 	string[,] Materials = new string[3, 3];
 
 	List<string[,]> Recipes = new List<string[,]>();
-    List<string> Results = new List<string>();
+    public List<GameObject> Results = new List<GameObject>();
 
     void Start ()
 	{
         CreateRecipe(new string[,] {
             {"none", "none", "none"},
-            {"none", "Stick", "none"},
+            {"none", "Flint", "none"},
             {"none", "Stick", "none"}
-        }, "Banana");
+        });
 	}
 
 	public void UpdateRecipe ()
 	{
         UpdateMaterials();
 
-        if (CheckRecipe() != -1) {
-            Debug.Log("Recipe crafted");
-        }
-	}
+        int recipe = CheckRecipe();
 
-	void CreateRecipe(string[,] recipe, string result)
+        if (recipe != -1) {
+            Debug.Log("Recipe crafted");
+            Instantiate(Results[recipe], new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 20, gameObject.transform.position.z), Quaternion.identity);
+        }
+    }
+
+	void CreateRecipe(string[,] recipe)
 	{
 		Recipes.Add(recipe);
-        Results.Add(result);
 	}
 
 	void UpdateMaterials()
