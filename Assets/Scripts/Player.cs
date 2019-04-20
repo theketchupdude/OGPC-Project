@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 	
-	int health = 100;
-	int hunger = 0;
+	public int health = 100;
+	public int hunger = 0;
 
     [SerializeField]
     float HungerRate = 1;

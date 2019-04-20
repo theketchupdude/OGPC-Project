@@ -10,6 +10,8 @@ public class EnemyBase : MonoBehaviour
     Transform target;
     NavMeshAgent agent;
 
+    bool colliding = true;
+
     public float speed;
 
 	// Use this for initialization
@@ -30,4 +32,26 @@ public class EnemyBase : MonoBehaviour
             agent.SetDestination(target.position);
         }
 	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player" && colliding)
+        {
+            collision.gameObject.GetComponent<Player>().health -= 10;
+            agent.isStopped = true;
+            colliding = false;
+            StartCoroutine(WaitAndResume());
+        }
+        if (collision.gameObject.tag == "EnemyDamager")
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private IEnumerator WaitAndResume()
+    {
+        yield return new WaitForSeconds(2);
+        agent.isStopped = false;
+        colliding = true;
+    }
 }
