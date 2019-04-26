@@ -1,24 +1,16 @@
 fileFormatVersion: 2
-guid: 53a1bc0c7f304d748a02f565b012f736
+guid: a8e916a720eca4a42bd9d866110595bc
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Camera
-    100004: Lamp
-    100006: Plane005
-    400000: //RootNode
-    400002: Camera
-    400004: Lamp
-    400006: Plane005
-    2000000: Camera
-    2100000: 'Material #46'
-    2300000: //RootNode
-    2300002: Plane005
-    3300000: //RootNode
-    3300002: Plane005
-    4300000: Plane005
-    10800000: Lamp
+    100000: default
+    100002: //RootNode
+    400000: default
+    400002: //RootNode
+    2100000: defaultMat
+    2300000: default
+    3300000: default
+    4300000: default
   externalObjects: {}
   materials:
     importMaterials: 1
