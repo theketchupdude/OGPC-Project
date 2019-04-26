@@ -1,0 +1,44 @@
+html, body {
+  margin: 0px;
+  padding: 0px;
+  background-color: black;
+}
+
+p {
+  margin: 0px;
+  padding: 30px;
+  background-color: black;
+  font-family: 'Raleway', sans-serif;
+  font-size: 3vh;
+  color: white;
+}
+
+h1 {
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0px;
+  padding: 100px;
+  text-align: center;
+}
+
+h2, h3 {
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+h2 {
+  font-size: 15vh;
+}
+
+h3 {
+  font-size: 5vh;
+}
+
+#header {
+  background-image: url("https://images.tms.ogpc.info/cloud//attachments/7d063899-18f6-4650-9148-9fd2434af36f.PNG?maxwidth=1280&maxheight=1024&bgcolor=white");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+}
