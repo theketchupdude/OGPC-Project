@@ -29,7 +29,7 @@ public class Player : MonoBehaviour {
         var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
 
         transform.Rotate(0, x, 0);
-        transform.Translate(0, 0, z);
+        transform.position = transform.position + Camera.main.transform.forward * z;
 
         screentint.color = new Color(1, 0, 0, -(health/100.0f) + 1.0f);
 	}

@@ -8,6 +8,7 @@ TagManager:
   - Food
   - EnemyBlocking
   - EnemyDamager
+  - Tape
   layers:
   - Default
   - TransparentFX
