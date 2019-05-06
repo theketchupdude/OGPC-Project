@@ -9,6 +9,7 @@ TagManager:
   - EnemyBlocking
   - EnemyDamager
   - Tape
+  - Hand
   layers:
   - Default
   - TransparentFX
