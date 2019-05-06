@@ -27,6 +27,7 @@ namespace Oculus.Platform.Samples.VrHoops
 				if (m_currentButton != button)
 				{
 					m_currentButton = button;
+                    print("select");
 					m_currentButton.Select();
 				}
 			}
