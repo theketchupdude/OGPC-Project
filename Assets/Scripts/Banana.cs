@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Banana : MonoBehaviour {
 
-    private Rigidbody rigidbody;
+    private new Rigidbody rigidbody;
 
 	// Use this for initialization
 	void Start () {
@@ -16,10 +16,12 @@ public class Banana : MonoBehaviour {
 		
 	}
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Hand")
+        print(other.gameObject.name);
+        if (other.gameObject.tag == "Hand")
         {
+            print("colliding");
             rigidbody.isKinematic = false;
         }
     }
