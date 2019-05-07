@@ -18,7 +18,7 @@ public class EnemyBase : MonoBehaviour
 	void Start () 
     {
         agent = GetComponent<NavMeshAgent>();
-
+        
         target = GameObject.Find("VR Rig").transform;
 	}
 	
@@ -45,6 +45,10 @@ public class EnemyBase : MonoBehaviour
         if (collision.gameObject.tag == "EnemyDamager")
         {
             Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "EnemyBlocking")
+        {
+            target = GameObject.Find("Terrain").transform;
         }
     }
 
