@@ -20,14 +20,16 @@ public class EnemyBase : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
         target = GameObject.Find("VR Rig").transform;
+
+        agent.stoppingDistance = 1f;
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        //float distance = Vector3.Distance(target.position, transform.position);
+        float distance = Vector3.Distance(target.position, transform.position);
 
-        //if (distance <= lookRadius)
+        if (distance <= lookRadius)
         {
             agent.SetDestination(target.position);
         }
@@ -35,10 +37,10 @@ public class EnemyBase : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player" && colliding)
+        if (agent.isStopped)
         {
             collision.gameObject.GetComponent<Player>().health -= 10;
-            agent.isStopped = true;
+            agent.isStopped = false;
             colliding = false;
             StartCoroutine(WaitAndResume());
         }

@@ -18,10 +18,8 @@ public class Banana : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        print(other.gameObject.name);
         if (other.gameObject.tag == "Hand")
         {
-            print("colliding");
             rigidbody.isKinematic = false;
         }
     }
