@@ -39,14 +39,13 @@ GameObject:
   - component: {fileID: 65251997155971316}
   - component: {fileID: 54255759601155446}
   - component: {fileID: 114707091087320238}
-  - component: {fileID: 114245120603944270}
   m_Layer: 0
   m_Name: Test Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1767648387920134
 GameObject:
   m_ObjectHideFlags: 1
@@ -222,17 +221,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114245120603944270
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1511117596238318}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08865c98b7512094d81cf6a7d3bcb60b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114707091087320238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -244,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d536c5fce6ab4caeabd4c9f9ec469ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 1
+  lookRadius: 40
   speed: 0
 --- !u!195 &195109355791429396
 NavMeshAgent:

@@ -7637,7 +7637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnableObjects:
-  - {fileID: 1572497243013436, guid: 4eb53b829f99bf845a4907590ebd4e6b, type: 2}
+  - {fileID: 2924286}
   timerRange: {x: 40, y: 130}
   onlyAtNight: 1
 --- !u!23 &368243635
@@ -20876,6 +20876,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1089787794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1089787788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints: []
 --- !u!1001 &1091590257
 Prefab:
   m_ObjectHideFlags: 0
@@ -33025,8 +33041,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1765451106}
-  m_LocalRotation: {x: 0.016433725, y: 0.089268535, z: 0.001472787, w: -0.99587095}
-  m_LocalPosition: {x: 51.309692, y: -9.267775, z: 9.199726}
+  m_LocalRotation: {x: -0.47929788, y: 0.19727759, z: 0.1115181, w: 0.84789085}
+  m_LocalPosition: {x: 8.723782, y: -16.931042, z: 5.476177}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 552094150}
