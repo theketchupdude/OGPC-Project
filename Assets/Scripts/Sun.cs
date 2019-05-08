@@ -7,7 +7,7 @@ public class Sun : MonoBehaviour {
     [SerializeField]
     float speed = 0.8f;
 
-    Light lit;
+    public Light lit;
 
     // Use this for initialization
     void Start () {
