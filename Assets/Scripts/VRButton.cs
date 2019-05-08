@@ -4,29 +4,46 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class VRButton : MonoBehaviour {
+public class VRButton : MonoBehaviour
+{
 
-    
+    public bool playGame, quit;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     private void OnTriggerStay(Collider other)
     {
         print(other.gameObject.name);
         if (other.gameObject.tag == "Hand")
         {
-            if (OVRInput.Axis1D.PrimaryIndexTrigger > 0 || OVRInput.Axis1D.SecondaryIndexTrigger > 0)
+            if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0.5f || OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) > 0.5)
             {
-                SceneManager.LoadScene(0);
+                if (playGame)
+                    PlayGame();
+                else if (quit)
+                    Quit();
             }
         }
+    }
+
+    void PlayGame()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    void Quit()
+    {
+        UnityEditor.EditorApplication.isPlaying = false;
+
     }
 }
