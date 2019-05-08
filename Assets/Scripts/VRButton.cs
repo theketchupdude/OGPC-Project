@@ -38,7 +38,7 @@ public class VRButton : MonoBehaviour
 
     void PlayGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     void Quit()
