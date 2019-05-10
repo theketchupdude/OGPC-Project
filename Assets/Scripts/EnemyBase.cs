@@ -3,48 +3,67 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyBase : MonoBehaviour 
+public class EnemyBase : MonoBehaviour
 {
     public float lookRadius = 10f;
 
     Transform target;
     NavMeshAgent agent;
 
-    bool colliding = true;
+    bool attacking = false;
 
     public float speed;
 
-	// Use this for initialization
-	void Start () 
+    // Use this for initialization
+    void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         
         target = GameObject.Find("VR Rig").transform;
-	}
-	
-	// Update is called once per frame
-	void Update () 
+        agent.stoppingDistance = 3f;
+    }
+
+    // Update is called once per frame
+    void Update()
     {
-        if (GameObject.Find("Sun").transform.rotation.x > 0 && GameObject.Find("Sun").transform.rotation.x < 180)
+        float distance = Vector3.Distance(target.position, transform.position);
+
+        // If inside the lookRadius
+        if (distance <= lookRadius)
         {
-            Destroy(gameObject);
+            agent.SetDestination(target.position); // Move toward target
+
+            // If within attacking distance
+            if (distance <= agent.stoppingDistance)
+            {
+                print(attacking);
+                if (!attacking)
+                {
+                    attacking = true;
+                    target.gameObject.GetComponentInChildren<OVRstuff>().health -= 10;
+
+                    FaceTarget(); // Make sure to face towards the target
+
+                    //float time = Time.time;
+                    StartCoroutine(WaitAndResume());
+                    //print("Done: " + Mathf.Round(Time.time - time));
+                    //attacking = false;
+                }
+            }
         }
 
-        //if (distance <= lookRadius)
-        {
-            agent.SetDestination(target.position);
-        }
-	}
+    }
+
+    // Rotate to always face target
+    void FaceTarget()
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player" && colliding)
-        {
-            collision.gameObject.GetComponent<Player>().health -= 10;
-            agent.isStopped = true;
-            colliding = false;
-            StartCoroutine(WaitAndResume());
-        }
         if (collision.gameObject.tag == "EnemyDamager")
         {
             Destroy(gameObject);
@@ -58,7 +77,6 @@ public class EnemyBase : MonoBehaviour
     private IEnumerator WaitAndResume()
     {
         yield return new WaitForSeconds(2);
-        agent.isStopped = false;
-        colliding = true;
+        attacking = false;
     }
 }

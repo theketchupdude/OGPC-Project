@@ -7,14 +7,20 @@ public class Spawner : MonoBehaviour {
     public List<GameObject> spawnableObjects = new List<GameObject>();
 
     public Vector2 timerRange;
-    public float timerCounter;
+    float timerCounter;
+
+    public bool onlyAtNight = false;
 
     bool isColiding;
+
+    GameObject moon;
 
 	// Use this for initialization
 	void Start () {
         // Start a timer between the ranges specified in the inspector
         timerCounter = Random.Range(timerRange.x, timerRange.y);
+
+        moon = GameObject.FindGameObjectWithTag("Moon");
 	}
 	
 	// Update is called once per frame
@@ -26,8 +32,15 @@ public class Spawner : MonoBehaviour {
         {
             timerCounter = Random.Range(timerRange.x, timerRange.y);
             // If nothing is coliding with the spawner, spawn something
-            if (!isColiding)
+            if (!onlyAtNight && !isColiding)
                 Spawn();
+            else if (onlyAtNight && !isColiding)
+            {
+                if (moon.GetComponent<Sun>().lit.enabled)
+                {
+                    Spawn();
+                }
+            }
         }
 	}
 
