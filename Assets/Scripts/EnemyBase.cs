@@ -25,7 +25,10 @@ public class EnemyBase : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        //float distance = Vector3.Distance(target.position, transform.position);
+        if (GameObject.Find("Sun").transform.rotation.x > 0 && GameObject.Find("Sun").transform.rotation.x < 180)
+        {
+            Destroy(gameObject);
+        }
 
         //if (distance <= lookRadius)
         {
