@@ -13,6 +13,7 @@ public class Rock : MonoBehaviour {
         {
             Destroy(collision.gameObject);
             Instantiate(Flint, gameObject.transform);
+            Destroy(gameObject);
         }
     }
 }
