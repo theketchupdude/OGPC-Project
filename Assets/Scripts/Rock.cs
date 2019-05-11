@@ -11,8 +11,11 @@ public class Rock : MonoBehaviour {
     {
         if (collision.gameObject.name == "Rock")
         {
+            GameObject temp = Instantiate(Flint, transform.position, Quaternion.identity);
+            temp.transform.parent = null;
+            string[] name = temp.name.Split('(');
+            temp.name = name[0];
             Destroy(collision.gameObject);
-            Instantiate(Flint, gameObject.transform);
         }
     }
 }

@@ -3908,6 +3908,10 @@ Prefab:
       propertyPath: m_Mass
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1868537961127178, guid: 27bb6170e1fe8a648a316daf97b5a0b1, type: 2}
+      propertyPath: m_Name
+      value: Rock
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27bb6170e1fe8a648a316daf97b5a0b1, type: 2}
   m_IsPrefabAsset: 0
@@ -8804,7 +8808,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: fda5efd26aaa3df45bb7b6e8f84dd0de, type: 3}
       propertyPath: m_Name
-      value: Rock2 (2)
+      value: Rock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fda5efd26aaa3df45bb7b6e8f84dd0de, type: 3}
@@ -14657,7 +14661,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: fda5efd26aaa3df45bb7b6e8f84dd0de, type: 3}
       propertyPath: m_Name
-      value: Rock2 (3)
+      value: Rock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fda5efd26aaa3df45bb7b6e8f84dd0de, type: 3}
@@ -16515,7 +16519,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: fda5efd26aaa3df45bb7b6e8f84dd0de, type: 3}
       propertyPath: m_Name
-      value: Rock2 (1)
+      value: Rock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fda5efd26aaa3df45bb7b6e8f84dd0de, type: 3}
@@ -21032,7 +21036,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: fda5efd26aaa3df45bb7b6e8f84dd0de, type: 3}
       propertyPath: m_Name
-      value: Rock2 (4)
+      value: Rock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fda5efd26aaa3df45bb7b6e8f84dd0de, type: 3}
@@ -26745,7 +26749,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: fda5efd26aaa3df45bb7b6e8f84dd0de, type: 3}
       propertyPath: m_Name
-      value: Rock2 (5)
+      value: Rock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fda5efd26aaa3df45bb7b6e8f84dd0de, type: 3}
@@ -32730,6 +32734,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.50000024
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fda5efd26aaa3df45bb7b6e8f84dd0de, type: 3}
+      propertyPath: m_Name
+      value: Rock
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fda5efd26aaa3df45bb7b6e8f84dd0de, type: 3}
   m_IsPrefabAsset: 0
@@ -37012,8 +37020,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1765451106}
-  m_LocalRotation: {x: 0.2080375, y: 0.5932215, z: 0.16226804, w: -0.76057726}
-  m_LocalPosition: {x: 71.21541, y: -19.530632, z: 31.300123}
+  m_LocalRotation: {x: 0.093485296, y: 0.90364754, z: 0.3308835, w: -0.25533867}
+  m_LocalPosition: {x: 56.240303, y: -25.21082, z: 53.07939}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 552094150}

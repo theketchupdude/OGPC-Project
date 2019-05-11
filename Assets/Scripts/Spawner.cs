@@ -50,6 +50,8 @@ public class Spawner : MonoBehaviour {
         GameObject spawnedObject = Instantiate(spawnableObjects[Random.Range(0, spawnableObjects.Count)]);
         // Reset the gameobjects position to center it on the spawner
         spawnedObject.transform.position = transform.position;
+        string[] name = spawnedObject.name.Split('(');
+        spawnedObject.name = name[0];
 
     }
 
