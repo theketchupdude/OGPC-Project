@@ -16915,6 +16915,7 @@ MonoBehaviour:
   credit: 0
   creditBack: 1
   optionsMenu: {fileID: 718708237}
+  mainMenu: {fileID: 323499233}
 --- !u!1001 &909004611
 Prefab:
   m_ObjectHideFlags: 0
@@ -25470,6 +25471,7 @@ MonoBehaviour:
   credit: 1
   creditBack: 0
   optionsMenu: {fileID: 718708237}
+  mainMenu: {fileID: 323499233}
 --- !u!114 &1405885429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26161,6 +26163,7 @@ MonoBehaviour:
   credit: 0
   creditBack: 0
   optionsMenu: {fileID: 0}
+  mainMenu: {fileID: 0}
 --- !u!114 &1441637412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34160,6 +34163,7 @@ MonoBehaviour:
   credit: 0
   creditBack: 0
   optionsMenu: {fileID: 0}
+  mainMenu: {fileID: 0}
 --- !u!65 &1876214840
 BoxCollider:
   m_ObjectHideFlags: 0
