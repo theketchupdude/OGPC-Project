@@ -26,6 +26,10 @@ public class TapePlayer : MonoBehaviour {
                     audioS.clip = audiosrc[0];
                     audioS.Play();
                     break;
+                case "Tape 2":
+                    audioS.clip = audiosrc[1];
+                    audioS.Play();
+                    break;
             }
         }
     }
