@@ -58,15 +58,11 @@ public class EnemyBase : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "EnemyDamager")
         {
             Destroy(gameObject);
-        }
-        if (collision.gameObject.tag == "EnemyBlocking")
-        {
-            target = GameObject.Find("Terrain").transform;
         }
     }
 

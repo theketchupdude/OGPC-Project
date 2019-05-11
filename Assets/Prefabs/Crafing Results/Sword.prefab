@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4122790316782670}
   - component: {fileID: 54194136801011644}
   - component: {fileID: 136727357036068996}
+  - component: {fileID: 114483164193416462}
   m_Layer: 0
   m_Name: Sword
   m_TagString: EnemyDamager
@@ -202,6 +203,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114483164193416462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1882045997547838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints: []
 --- !u!136 &136727357036068996
 CapsuleCollider:
   m_ObjectHideFlags: 1
