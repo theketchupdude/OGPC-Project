@@ -36,7 +36,6 @@ public class EnemyBase : MonoBehaviour
             // If within attacking distance
             if (distance <= agent.stoppingDistance)
             {
-                print(attacking);
                 if (!attacking)
                 {
                     attacking = true;
@@ -44,10 +43,7 @@ public class EnemyBase : MonoBehaviour
 
                     FaceTarget(); // Make sure to face towards the target
 
-                    //float time = Time.time;
                     StartCoroutine(WaitAndResume());
-                    //print("Done: " + Mathf.Round(Time.time - time));
-                    //attacking = false;
                 }
             }
         }

@@ -20,7 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4631670827937124}
   - component: {fileID: 135024326785446730}
-  m_Layer: 0
+  - component: {fileID: 208103349814570646}
+  m_Layer: 10
   m_Name: Enemy Blocker
   m_TagString: EnemyBlocking
   m_Icon: {fileID: 0}
@@ -43,6 +44,7 @@ GameObject:
   - component: {fileID: 198942737347080882}
   - component: {fileID: 65315550862463772}
   - component: {fileID: 114742691117177866}
+  - component: {fileID: 114383095029257938}
   m_Layer: 0
   m_Name: Torch
   m_TagString: Untagged
@@ -70,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1940044361755760}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.895874, y: 9.56, z: -5.447283}
+  m_LocalPosition: {x: 47.03, y: 13.84, z: 31.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4631670827937124}
@@ -183,6 +185,22 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114383095029257938
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1940044361755760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints: []
 --- !u!114 &114742691117177866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -202,7 +220,7 @@ SphereCollider:
   m_GameObject: {fileID: 1363683843135362}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -4796,3 +4814,18 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!208 &208103349814570646
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1363683843135362}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.25, y: 0.25, z: 0.25}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

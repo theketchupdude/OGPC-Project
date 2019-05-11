@@ -4,21 +4,33 @@ using UnityEngine;
 
 public class CraftingCollider : MonoBehaviour
 {
+    string craftingMaterial = "none";
+    GameObject materialReference = null;
 
-	string craftingMaterial = "none";
+    void OnTriggerEnter(Collider collision)
+    {
+        materialReference = collision.gameObject;
+        craftingMaterial = collision.gameObject.name;
+    }
 
-	void OnCollisionEnter(Collision collision)
-	{
-		craftingMaterial = collision.gameObject.name;
-	}
+    void OnTriggerExit(Collider collision)
+    {
+        TriggerExit();
+    }
 
-	void OnCollisionExit()
-	{
-		craftingMaterial = "none";
-	}
+    public string GetCraftingMaterial()
+    {
+        return craftingMaterial;
+    }
 
-	public string GetCraftingMaterial()
-	{
-		return craftingMaterial;
-	}
+    public GameObject GetCraftingMaterialObject()
+    {
+        return materialReference;
+    }
+
+    public void TriggerExit()
+    {
+        materialReference = null;
+        craftingMaterial = "none";
+    }
 }

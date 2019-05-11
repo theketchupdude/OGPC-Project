@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class VRButton : MonoBehaviour
 {
 
-    public bool playGame, quit;
+    public bool playGame, quit, craft;
 
     // Use this for initialization
     void Start()
@@ -23,7 +23,6 @@ public class VRButton : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        print(other.gameObject.name);
         if (other.gameObject.tag == "Hand")
         {
             if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0.5f || OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) > 0.5)
@@ -32,6 +31,10 @@ public class VRButton : MonoBehaviour
                     PlayGame();
                 else if (quit)
                     Quit();
+                else if (craft)
+                {
+                    Craft();
+                }
             }
         }
     }
@@ -45,5 +48,20 @@ public class VRButton : MonoBehaviour
     {
         UnityEditor.EditorApplication.isPlaying = false;
 
+    }
+
+    void Craft()
+    {
+        print("craft");
+        bool craft = GameObject.FindGameObjectWithTag("CraftingRock").GetComponent<Crafting>().craft = true;
+        //StartCoroutine(WaitAndResume(craft));
+    }
+
+    private IEnumerator WaitAndResume(bool craft)
+    {
+        yield return new WaitForSeconds(2);
+        craft = false;
+
+        print(GameObject.FindGameObjectWithTag("CraftingRock").GetComponent<Crafting>().craft);
     }
 }

@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Crafting : MonoBehaviour
 {
-    string[,] Materials = new string[3, 3];
+    CraftingCollider[,] Materials = new CraftingCollider[3, 3];
 
     List<string[,]> Recipes = new List<string[,]>();
     public List<GameObject> Results = new List<GameObject>();
+
+    public bool craft = false;
 
     void Start()
     {
@@ -22,18 +24,26 @@ public class Crafting : MonoBehaviour
             {"none", "Flint", "none"},
             {"none", "Stick", "none"}
         });
-	}
+    }
 
-    public void UpdateRecipe()
+    public void Update()
     {
         UpdateMaterials();
-
         int recipe = CheckRecipe();
 
-        if (recipe != -1)
+        if (recipe != -1 && craft)
         {
-            Debug.Log("Recipe crafted");
-            Instantiate(Results[recipe], new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 20, gameObject.transform.position.z), Quaternion.identity);
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    GameObject currentObject = Materials[i, j].GetCraftingMaterialObject();
+                    Destroy(currentObject);
+                    Materials[i, j].TriggerExit();
+                }
+            }
+            Instantiate(Results[recipe], new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 2, gameObject.transform.position.z), Quaternion.identity);
+            recipe = -1;
         }
     }
 
@@ -44,15 +54,16 @@ public class Crafting : MonoBehaviour
 
     void UpdateMaterials()
     {
-        Materials[0, 0] = gameObject.transform.GetChild(1).gameObject.GetComponent<CraftingCollider>().GetCraftingMaterial();
-        Materials[0, 1] = gameObject.transform.GetChild(2).gameObject.GetComponent<CraftingCollider>().GetCraftingMaterial();
-        Materials[0, 2] = gameObject.transform.GetChild(3).gameObject.GetComponent<CraftingCollider>().GetCraftingMaterial();
-        Materials[1, 0] = gameObject.transform.GetChild(4).gameObject.GetComponent<CraftingCollider>().GetCraftingMaterial();
-        Materials[1, 1] = gameObject.transform.GetChild(5).gameObject.GetComponent<CraftingCollider>().GetCraftingMaterial();
-        Materials[1, 2] = gameObject.transform.GetChild(6).gameObject.GetComponent<CraftingCollider>().GetCraftingMaterial();
-        Materials[2, 0] = gameObject.transform.GetChild(7).gameObject.GetComponent<CraftingCollider>().GetCraftingMaterial();
-        Materials[2, 1] = gameObject.transform.GetChild(8).gameObject.GetComponent<CraftingCollider>().GetCraftingMaterial();
-        Materials[2, 2] = gameObject.transform.GetChild(9).gameObject.GetComponent<CraftingCollider>().GetCraftingMaterial();
+        int index = 1;
+
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                Materials[i, j] = gameObject.transform.GetChild(index).gameObject.GetComponent<CraftingCollider>();
+                index++;
+            }
+        }
     }
 
     int CheckRecipe()
@@ -67,13 +78,13 @@ public class Crafting : MonoBehaviour
         return -1;
     }
 
-    bool ArrayContentEquals(string[,] array1, string[,] array2, int rows, int columns)
+    bool ArrayContentEquals(string[,] array1, CraftingCollider[,] array2, int rows, int columns)
     {
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < columns; j++)
             {
-                if (array1[i, j] != array2[i, j])
+                if (array1[i, j] != array2[i, j].GetCraftingMaterial())
                 {
                     return false;
                 }
