@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 64055676887794884}
   - component: {fileID: 114730447909337012}
   m_Layer: 0
-  m_Name: Flint
+  m_Name: Flint 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
