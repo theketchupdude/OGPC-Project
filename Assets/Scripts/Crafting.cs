@@ -24,6 +24,12 @@ public class Crafting : MonoBehaviour
             {"none", "Flint", "none"},
             {"none", "Stick", "none"}
         });
+
+        CreateRecipe(new string[,] {
+            {"Coconut", "Coconut", "Coconut"},
+            {"Coconut", "Coconut", "Coconut"},
+            {"Coconut", "Coconut", "Coconut"}
+        });
     }
 
     public void Update()

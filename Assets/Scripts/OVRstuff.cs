@@ -49,6 +49,11 @@ public class OVRstuff : MonoBehaviour {
         {
             hunger += 25;
             Destroy(collision.gameObject);
+        } else if (collision.gameObject.tag == "Super Food")
+        {
+            hunger += 75;
+            health += 25;
+            Destroy(collision.gameObject);
         }
     }
 }

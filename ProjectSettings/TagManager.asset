@@ -12,6 +12,7 @@ TagManager:
   - Hand
   - Moon
   - CraftingRock
+  - Super Food
   layers:
   - Default
   - TransparentFX
